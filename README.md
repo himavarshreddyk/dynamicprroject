@@ -1,1 +1,1 @@
-# dynamicprroject
+# dynamic project
