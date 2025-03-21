@@ -1,46 +1,87 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    text-align: center;
-}
+ nav {
+            display: flex;
+            background: #333;
+            padding: 10px;
+            overflow-x: auto; 
+            white-space: nowrap; 
+            position: relative; 
+        }
 
-h1 {
-    padding: 20px;
-    background: #222;
-    color: white;
-    margin: 0;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            background: #444;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
 
-nav {
-    display: flex;
-    justify-content: center;
-    background: #333;
-    padding: 10px;
-}
+        nav a:hover {
+            background: #555;
+            transform: translateY(-2px);
+        }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 5px;
-    background: #444;
-    border-radius: 4px;
-}
+        nav a.active {
+            background: red;
+            transform: translateY(-4px);
+        }
 
-nav a:hover {
-    background: #555;
-}
+        body {
+            scroll-behavior: smooth;
+        }
 
-main {
-    width: 100%;
-    padding: 20px;
-}
+        
+        nav::-webkit-scrollbar {
+            height: 8px;  
+            background-color: #222;
+        }
 
-iframe {
-    width: 90%;
-    height: 80vh;
-    border: none;
-    background: white;
-}
+        nav::-webkit-scrollbar-thumb {
+            background-color: #555;
+            border-radius: 4px;
+        }
+
+        nav::-webkit-scrollbar-thumb:hover {
+            background-color: #777;
+        }
+        
+        nav::before,
+        nav::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 20px; 
+            background: linear-gradient(to right, #333, transparent); 
+            left: 0;
+            pointer-events: none; 
+        }
+
+        nav::after {
+            background: linear-gradient(to left, #333, transparent); 
+            right: 0;
+            left: auto;
+        }
+
+        h1 {
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin: 0;
+            text-align: center;  /* Keep it centered */
+            font-size: 2em; /* Larger font size */
+            letter-spacing: 2px; /* Add letter spacing */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Add text shadow */
+            border-bottom: 2px solid red; /* Add a border */
+        }
+    </style>
+</head>
+<body>
+    <h1>Class Works</h1>
+    <nav id="navPanel">
+    </nav>
+    <main id="content">
+        <iframe id="contentFrame" src="works/landing.html"></iframe>
+    </main>
