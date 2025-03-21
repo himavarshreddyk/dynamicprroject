@@ -1,4 +1,4 @@
- nav {
+nav {
             display: flex;
             background: #333;
             padding: 10px;
@@ -70,18 +70,16 @@
             background: #222;
             color: white;
             margin: 0;
-            text-align: center;  /* Keep it centered */
-            font-size: 2em; /* Larger font size */
-            letter-spacing: 2px; /* Add letter spacing */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Add text shadow */
-            border-bottom: 2px solid red; /* Add a border */
+            text-align: center;
+            font-size: 2em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border-bottom: 2px solid red;
         }
-    </style>
-</head>
-<body>
-    <h1>Class Works</h1>
-    <nav id="navPanel">
-    </nav>
-    <main id="content">
-        <iframe id="contentFrame" src="works/landing.html"></iframe>
-    </main>
+
+        iframe {
+            width: 90%;
+            height: 80vh;
+            border: none;
+            background: white;
+        }
