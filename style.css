@@ -78,8 +78,8 @@ nav {
     }
 
     iframe {
-        width: 90%;
-        height: 90vh;
+        width: 80%;
+        height: 100vh;
         border: none;
         background: white;
         display: block;
