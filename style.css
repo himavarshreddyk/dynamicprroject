@@ -57,24 +57,26 @@ nav::-webkit-scrollbar-thumb:hover {
     background: #ff6347;  
 }
 
-/* Fading edges effect */
+/* Fading edges effect fix */
 nav::before,
 nav::after {
     content: '';
     position: absolute;
     top: 0;
     height: 100%;
-    width: 30px; 
-    background: linear-gradient(to right, #1e1e1e, transparent); 
+    width: 15px; /* Reduced width to avoid glitch */
+    z-index: 0;  /* Send it behind the content */
+    pointer-events: none;
+}
+
+nav::before {
     left: 0;
-    pointer-events: none; 
-    z-index: 1;
+    background: linear-gradient(to right, rgba(30, 30, 30, 1), transparent);
 }
 
 nav::after {
-    background: linear-gradient(to left, #1e1e1e, transparent); 
     right: 0;
-    left: auto;
+    background: linear-gradient(to left, rgba(30, 30, 30, 1), transparent);
 }
 
 /* Smooth Scrolling */
