@@ -1,92 +1,91 @@
 nav {
-            display: flex;
-            background: #333;
-            padding: 10px;
-            overflow-x: auto; 
-            white-space: nowrap; 
-            position: relative; 
-        }
+        display: flex;
+        background: #2a2a72; /* Darker blue */
+        padding: 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        position: relative;
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            margin: 5px;
-            background: #444;
-            border-radius: 4px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            display: inline-block;
-        }
+    nav a {
+        color: #ffffff; /* White text */
+        text-decoration: none;
+        padding: 10px 20px;
+        margin: 5px;
+        background: #4a148c; /* Darker purple */
+        border-radius: 4px;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        display: inline-block;
+    }
 
-        nav a:hover {
-            background: #555;
-            transform: translateY(-2px);
-        }
+    nav a:hover {
+        background: #6a1b9a; /* Slightly lighter purple on hover */
+        transform: translateY(-2px);
+    }
 
-        nav a.active {
-            background: red;
-            transform: translateY(-4px);
-        }
+    nav a.active {
+        background: #d50000; /* A brighter red */
+        transform: translateY(-4px);
+    }
 
-        body {
-            scroll-behavior: smooth;
-            margin: 0; /* Remove default body margin */
-        }
+    body {
+        scroll-behavior: smooth;
+        margin: 0;
+    }
 
-        
-        nav::-webkit-scrollbar {
-            height: 8px;  
-            background-color: #222;
-        }
+    nav::-webkit-scrollbar {
+        height: 8px;
+        background-color: #1a237e; /* Darker blue scrollbar track */
+    }
 
-        nav::-webkit-scrollbar-thumb {
-            background-color: #555;
-            border-radius: 4px;
-        }
+    nav::-webkit-scrollbar-thumb {
+        background-color: #5e35b1; /* Purple scrollbar thumb */
+        border-radius: 4px;
+    }
 
-        nav::-webkit-scrollbar-thumb:hover {
-            background-color: #777;
-        }
-        
-        nav::before,
-        nav::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            height: 100%;
-            width: 20px; 
-            background: linear-gradient(to right, #333, transparent); 
-            left: 0;
-            pointer-events: none; 
-        }
+    nav::-webkit-scrollbar-thumb:hover {
+        background-color: #7e57c2; /* Lighter purple on scrollbar thumb hover */
+    }
 
-        nav::after {
-            background: linear-gradient(to left, #333, transparent); 
-            right: 0;
-            left: auto;
-        }
+    nav::before,
+    nav::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 20px;
+        background: linear-gradient(to right, #2a2a72, transparent); /* Match nav background */
+        left: 0;
+        pointer-events: none;
+    }
 
-        h1 {
-            padding: 20px;
-            background: #222;
-            color: white;
-            margin: 0;
-            text-align: center;
-            font-size: 2em;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            border-bottom: 2px solid red;
-        }
+    nav::after {
+        background: linear-gradient(to left, #2a2a72, transparent); /* Match nav background */
+        right: 0;
+        left: auto;
+    }
 
-        iframe {
-            width: 100%;  /* Make it full width */
-            height: 100vh; /* Make it full height */
-            border: none;
-            background: white;
-            display: block; /* Important: Removes extra space below iframe */
-        }
+    h1 {
+        padding: 20px;
+        background: #1a237e; /* Darkest blue */
+        color: #ffffff;
+        margin: 0;
+        text-align: center;
+        font-size: 2em;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        border-bottom: 2px solid #d50000; /* Bright red border */
+    }
 
-        main {
-            padding: 0; /* Remove padding from main */
-            width: 100%;
-        }
+    iframe {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        background: white;
+        display: block;
+    }
+
+    main {
+        padding: 0;
+        width: 100%;
+    }
