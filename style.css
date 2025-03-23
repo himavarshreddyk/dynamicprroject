@@ -1,237 +1,92 @@
-/* ========== Global Styles ========== */
-:root {
-    --primary-bg: #222;
-    --secondary-bg: #333;
-    --accent-color: #ff9800;
-    --hover-color: #555;
-    --text-light: #e5dada;
-    --border-color: #e82b2b;
-    --button-radius: 5px;
-    --transition-speed: 0.3s;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: "Arial", sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
-}
-
-/* ========== Header ========== */
-h1 {
-    padding: 10px;
-    background: var(--primary-bg);
-    color: white;
-    font-size: 1rem;
-}
-
-/* ========== Navigation ========== */
-.nav-container {
-    display: flex;
-    align-items: center;
-    background: var(--secondary-bg);
-    padding: 10px;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.scroll-btn {
-    background: var(--primary-bg);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    font-size: 20px;
-    border-radius: var(--button-radius);
-    cursor: pointer;
-    transition: background var(--transition-speed);
-}
-
-.scroll-btn:hover {
-    background: var(--hover-color);
-}
-
 nav {
-    display: flex;
-    overflow-x: auto;
-    white-space: nowrap;
-    scroll-behavior: smooth;
-    flex-grow: 1;
-    padding: 10px;
-}
+            display: flex;
+            background: #333;
+            padding: 10px;
+            overflow-x: auto; 
+            white-space: nowrap; 
+            position: relative; 
+        }
 
-nav::-webkit-scrollbar {
-    display: none;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            background: #444;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            display: inline-block;
+        }
 
-.nav-link {
-    flex: 0 0 auto;
-    color: var(--text-light);
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 5px;
-    background: var(--hover-color);
-    border-radius: var(--button-radius);
-    transition: background var(--transition-speed), transform 0.2s ease-in-out;
-}
+        nav a:hover {
+            background: #555;
+            transform: translateY(-2px);
+        }
 
-.nav-link.active {
-    background: var(--accent-color);
-    color: white;
-    font-weight: bold;
-    border-bottom: 3px solid var(--border-color);
-    transform: scale(1.1);
-}
+        nav a.active {
+            background: red;
+            transform: translateY(-4px);
+        }
 
-.nav-link:hover {
-    background: var(--hover-color);
-}
+        body {
+            scroll-behavior: smooth;
+            margin: 0; /* Remove default body margin */
+        }
 
-/* ========== Main Content ========== */
-main {
-    width: 90%;
-    padding: 20px;
-}
+        
+        nav::-webkit-scrollbar {
+            height: 8px;  
+            background-color: #222;
+        }
 
-iframe {
-    width: 100%;
-    height: 80vh;
-    border: none;
-    background: white;
-    margin-left: 40px;
-    border-radius: var(--button-radius);
-    margin-left: 70px;
-}
+        nav::-webkit-scrollbar-thumb {
+            background-color: #555;
+            border-radius: 4px;
+        }
 
-/* ========== iFrame Navigation ========== */
-#iframeNav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 15px;
-}
+        nav::-webkit-scrollbar-thumb:hover {
+            background-color: #777;
+        }
+        
+        nav::before,
+        nav::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 20px; 
+            background: linear-gradient(to right, #333, transparent); 
+            left: 0;
+            pointer-events: none; 
+        }
 
-#iframeNav button {
-    background: var(--primary-bg);
-    color: white;
-    border: 2px solid var(--accent-color);
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: var(--button-radius);
-    cursor: pointer;
-    transition: background var(--transition-speed), transform 0.2s ease-in-out;
-}
+        nav::after {
+            background: linear-gradient(to left, #333, transparent); 
+            right: 0;
+            left: auto;
+        }
 
-#iframeNav button:hover {
-    background: var(--accent-color);
-    color: white;
-    transform: scale(1.05);
-}
+        h1 {
+            padding: 20px;
+            background: #222;
+            color: white;
+            margin: 0;
+            text-align: center;
+            font-size: 2em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            border-bottom: 2px solid red;
+        }
 
-/* ========== RESPONSIVE STYLES ========== */
+        iframe {
+            width: 100%;  /* Make it full width */
+            height: 100vh; /* Make it full height */
+            border: none;
+            background: white;
+            display: block; /* Important: Removes extra space below iframe */
+        }
 
-/* Mobile Devices (Max Width: 600px) */
-@media screen and (max-width: 600px) {
-    h1 {
-        font-size: 1.5rem;
-        padding: 15px;
-    }
-
-    .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    nav {
-        flex-direction: column;
-        width: 100%;
-        padding: 0;
-    }
-
-    .nav-link {
-        font-size: 14px;
-        padding: 8px 16px;
-        margin: 5px 0;
-    }
-
-    iframe {
-        margin-left: 0;
-        height: 60vh;
-    }
-
-    .scroll-btn {
-        font-size: 18px;
-    }
-
-    #iframeNav button {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-}
-
-/* Tablets and Small Screens (Max Width: 768px) */
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 1.8rem;
-        padding: 18px;
-    }
-
-    .nav-container {
-        flex-direction: column;
-        gap: 8px;
-    }
-
-    .nav-link {
-        font-size: 16px;
-        padding: 12px 20px;
-    }
-
-    iframe {
-        margin-left: 0;
-        height: 70vh;
-    }
-
-    .scroll-btn {
-        font-size: 18px;
-    }
-
-    #iframeNav button {
-        font-size: 15px;
-        padding: 10px 18px;
-    }
-}
-
-/* Desktop Devices (Min Width: 1024px) */
-@media screen and (min-width: 1024px) {
-    h1 {
-        font-size: 2.5rem;
-        padding: 25px;
-    }
-
-    .nav-container {
-        justify-content: space-between;
-    }
-
-    .nav-link {
-        font-size: 18px;
-        padding: 12px 24px;
-    }
-
-    iframe {
-        height: 80vh;
-    }
-
-    .scroll-btn {
-        font-size: 20px;
-    }
-
-    #iframeNav button {
-        font-size: 16px;
-        padding: 12px 22px;
-    }
-}
+        main {
+            padding: 0; /* Remove padding from main */
+            width: 100%;
+        }
