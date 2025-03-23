@@ -1,92 +1,140 @@
+/* Navigation Bar */
 nav {
     display: flex;
-    background: #2c3e50; /* A deep, rich blue-gray */
-    padding: 12px;
-    overflow-x: auto;
-    white-space: nowrap;
-    position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow */
+    background: linear-gradient(135deg, #1e1e1e, #333); 
+    padding: 12px 20px;
+    overflow-x: auto; 
+    white-space: nowrap; 
+    position: relative; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
+    border-bottom: 3px solid #ff4500;
+    transition: background 0.5s ease;
+}
+
+nav:hover {
+    background: linear-gradient(135deg, #292929, #444);
 }
 
 nav a {
-    color: #ecf0f1; /* Light, clean gray for text */
+    color: #fff;
     text-decoration: none;
-    padding: 12px 22px;
-    margin: 6px;
-    background: #34495e; /* Slightly lighter blue-gray links */
-    border-radius: 8px; /* More rounded corners */
-    transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+    padding: 12px 25px;
+    margin: 5px;
+    background: linear-gradient(135deg, #444, #555);
+    border-radius: 8px;
+    transition: all 0.3s ease;
     display: inline-block;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    font-weight: bold;
+    letter-spacing: 0.5px;
 }
 
 nav a:hover {
-    background: #4a6572; /* Subtle lighter hover */
-    transform: translateY(-3px);
-    color: #ffffff; /* White text on hover for emphasis */
+    background: #ff4500;
+    color: #fff;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.7);
 }
 
 nav a.active {
-    background: #3498db; /* A vibrant, appealing blue */
-    color: white;
-    transform: translateY(-4px);
-    box-shadow: 0 4px 8px rgba(52, 152, 219, 0.4); /* Stronger shadow for active */
+    background: #ff6347; 
+    transform: translateY(-6px) scale(1.1);
+    border: 2px solid #fff;
 }
 
-body {
-    scroll-behavior: smooth;
-    background: #222f3e; /* Darker, deep blue-gray background */
-    color: #ecf0f1;
-}
-
+/* Scrollbar Styling */
 nav::-webkit-scrollbar {
-    height: 8px;
-    background-color: #34495e;
+    height: 10px;  
+    background-color: #222;
 }
 
 nav::-webkit-scrollbar-thumb {
-    background-color: #4a6572;
-    border-radius: 4px;
+    background: #ff4500;  
+    border-radius: 8px;
 }
 
 nav::-webkit-scrollbar-thumb:hover {
-    background-color: #5d7582;
+    background: #ff6347;  
 }
 
+/* Fading edges effect */
 nav::before,
 nav::after {
     content: '';
     position: absolute;
     top: 0;
     height: 100%;
-    width: 20px;
-    background: linear-gradient(to right, #2c3e50, transparent);
+    width: 30px; 
+    background: linear-gradient(to right, #1e1e1e, transparent); 
     left: 0;
-    pointer-events: none;
+    pointer-events: none; 
+    z-index: 1;
 }
 
 nav::after {
-    background: linear-gradient(to left, #2c3e50, transparent);
+    background: linear-gradient(to left, #1e1e1e, transparent); 
     right: 0;
     left: auto;
 }
 
-h1 {
-    padding: 24px;
-    background: #2c3e50;
-    color: #ffffff; /* White heading text for contrast */
-    margin: 0;
-    text-align: center;
-    font-size: 2.2em;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    border-bottom: 3px solid #3498db; /* Vibrant blue border */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+/* Smooth Scrolling */
+body {
+    scroll-behavior: smooth;
+    background: #f5f5f5;
+    color: #333;
 }
 
+/* Header Styling */
+h1 {
+    padding: 25px;
+    background: linear-gradient(135deg, #1e1e1e, #444);
+    color: #ff4500;
+    margin: 0;
+    text-align: center;  
+    font-size: 2.5em; 
+    letter-spacing: 2px; 
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.7); 
+    border-bottom: 4px solid #ff4500;
+    transition: all 0.5s ease;
+}
+
+h1:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #444, #1e1e1e);
+    letter-spacing: 3px;
+}
+
+/* Iframe Styling */
 iframe {
-    width: 100%;
-    height: 80vh;
+    width: 100%;  
+    height: 85vh; 
     border: none;
-    background: #222f3e;
-    display: block;
+    background: #fff;
+    display: block; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+}
+
+iframe:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Button Animations */
+button {
+    padding: 10px 25px;
+    background: linear-gradient(135deg, #ff4500, #ff6347);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #ff6347, #ff4500);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
 }
