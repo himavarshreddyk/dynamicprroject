@@ -28,7 +28,7 @@
         }
 
         nav a.active {
-            background: red;
+            background: blue;
             transform: translateY(-4px);
         }
 
